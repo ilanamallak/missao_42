@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input {
+            padding: 16px 24px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            outline-color: lightcoral;
+            background-color: #f1f5f9;
+        }
+
+        select {
+            padding: 16px 16px;
+            border-radius: 80px;
+            border: 1px solid #475569;
+            outline-color: lightcoral;
+            background-color: #f1f5f9;
+        }
+
+        .button {
+            background-color: lightcoral;
+            color: #000;
+            border: 1px solid lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input type="text" id="leftOperand" placeholder="Digite um número">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Digite outro número">
+        <input type="button" class="button" value="Try me!" id="calculateButton">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#calculateButton').click(function () {
+                var leftOperand = parseFloat($('#leftOperand').val());
+                var rightOperand = parseFloat($('#rightOperand').val());
+                var operator = $('#operator').val();
+
+                if (isNaN(leftOperand) || isNaN(rightOperand)) {
+                    alert('Error :(');
+                    return;
+                }
+
+                var result;
+                switch (operator) {
+                    case '+':
+                        result = leftOperand + rightOperand;
+                        break;
+                    case '-':
+                        result = leftOperand - rightOperand;
+                        break;
+                    case '*':
+                        result = leftOperand * rightOperand;
+                        break;
+                    case '/':
+                        if (rightOperand === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = leftOperand / rightOperand;
+                        break;
+                    case '%':
+                        if (rightOperand === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = leftOperand % rightOperand;
+                        break;
+                    default:
+                        alert('Invalid operator');
+                        return;
+                }
+
+                console.log('Resultado:', result);
+                alert('O resultado é: ' + result);
+            });
+
+            setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+body {
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-card {
+    margin: 0 auto;
+    padding: 24px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);;
+
+}
+
+.profile-card h1 {
+    margin-top: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #454545;
+    font-weight: 500;
+    margin: 0;
+
+}
+
+.profile-pic img {
+    width: 272px;
+    height: 240px;
+    border-radius: 16px;
+    margin: 12px auto;
+    display: block;
+}
+
+.profile-card h2 {
+    margin: 0;
+}
+
+.profile-card p{
+    color: #454545;
+    margin: 0;
+}
+
+.social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+button {
+    padding: 16px 32px;
+    width: 100%;
+    margin-top: 24px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}

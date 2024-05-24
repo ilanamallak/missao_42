@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        body {
+            margin: 0;
+        }
+       
+        table {
+            width: 100vw;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+        
+        td, th {
+            padding: 24px;
+            border: 1px solid black;
+            text-align: center;
+
+        }
+        
+        .celula1 {
+            background-color: lightsalmon;
+        }
+        
+        .celula2 {
+            background-color: lightcoral;
+        }
+        
+         
+        /* Estilo para telas menores que 600px */
+        @media screen and (max-width: 600px) {
+            table {
+                height: 100vh; /* Define a altura da tabela como 100% da viewport height */
+            }
+            
+            /* Transforma cada célula da tabela em um bloco com largura de 100% */
+            td, th {
+                display: block;
+                width: 100vw;
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td class="celula1">Primeira célula</td>
+                <td class="celula2">Segunda célula</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

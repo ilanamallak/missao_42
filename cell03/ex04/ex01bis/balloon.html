@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explode this balloon</title>
+  <style>
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+
+    .balloon:hover {
+      width: 195px;
+      height: 195px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="balloon" id="myBalloon"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var balloon = $('#myBalloon');
+    var colors = ['red', 'green', 'blue'];
+    var currentIndex = 0;
+
+    balloon.click(function() {
+      var currentWidth = balloon.width();
+      var currentHeight = balloon.height();
+
+      if (currentWidth <= 420 && currentHeight <= 420) {
+        balloon.width(currentWidth + 10);
+        balloon.height(currentHeight + 10);
+
+        currentIndex = (currentIndex + 1) % colors.length;
+        balloon.css('background-color', colors[currentIndex]);
+      } else {
+        balloon.width(200);
+        balloon.height(200);
+        currentIndex = 0;
+        balloon.css('background-color', colors[currentIndex]);
+      }
+    });
+
+    balloon.mouseleave(function() {
+      var currentWidth = balloon.width();
+      var currentHeight = balloon.height();
+
+      if (currentWidth > 200 && currentHeight > 200) {
+        balloon.width(currentWidth - 5);
+        balloon.height(currentHeight - 5);
+
+        currentIndex = (currentIndex - 1 + colors.length) % colors.length;
+        balloon.css('background-color', colors[currentIndex]);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

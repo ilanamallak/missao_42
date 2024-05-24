@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio {
+    background-image: url('https://images.unsplash.com/photo-1716377239833-54b55d732bc8?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.fim {
+    background-image: url('https://images.unsplash.com/photo-1709318305042-16d0b74554d1?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.conteudo {
+    background-color: black;
+    height: 560px; /* Altura do bloco preto */
+}
+
+.mensagem-centralizada, .mensagem-preta {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.bloco-preto {
+    height: 560px; /* Altura do bloco preto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
