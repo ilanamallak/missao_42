@@ -1,0 +1,127 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+    color: #fff;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 24px;
+}
+
+.card {
+    width: 240px;
+    padding: 24px;
+    border-radius: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+
+
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.card-body {
+    padding: 0px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #AFB5BE;
+    margin-bottom: 40px;
+}
+
+.card-footer {
+    padding: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 0.8rem;
+    color: #AFB5BE;
+
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #AFB5BE;
+    text-align: center;
+    padding: 24px 16px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    body html {
+        overflow: auto;
+        padding: 24px;
+
+    }
+    .container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card {
+        width: 80vw;
+        padding: 16px;
+
+    }
+
+    .card img {
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+
+    footer {
+        position: static;
+        background-color: black;
+    }
+
+
+}
